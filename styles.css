@@ -320,9 +320,7 @@ body {
   transform: scale(1.2);
 }
 
-/* Themes */
-/* Default (Calm) is handled by body background in :root/body, 
-but we can define explicit classes to override */
+/* themes */
 
 .bg-calm {
   background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);

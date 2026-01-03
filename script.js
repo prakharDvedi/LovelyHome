@@ -28,7 +28,7 @@ function updateTime() {
   document.getElementById("greeting").textContent = greetingText;
 }
 
-// Initial call
+// initial call
 updateTime();
 quote();
 initTodo();

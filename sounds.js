@@ -5,8 +5,8 @@ export default function initSounds() {
 
   const SOUNDS = {
     rain: "sounds/rain.mp3",
-    forest: "sounds/water.mp3", // User provided water.mp3
-    cafe: "sounds/coffee.mp3", // User provided coffee.mp3
+    forest: "sounds/water.mp3",
+    cafe: "sounds/coffee.mp3",
   };
 
   function stopSound() {
@@ -14,28 +14,28 @@ export default function initSounds() {
       currentAudio.pause();
       currentAudio = null;
     }
-    // Reset UI
+    // reset UI
     buttons.forEach((btn) => btn.classList.remove("active"));
     activeSoundName = null;
   }
 
   function playSound(name) {
-    // If clicking the active one, toggle off
+    // if clicking the active one, toggle off
     if (activeSoundName === name) {
       stopSound();
       return;
     }
 
-    // Stop previous
+    // stop previous
     stopSound();
 
-    // Play new
+    // play new
     const url = SOUNDS[name];
     if (url) {
       console.log(`Loading sound: ${name} from ${url}`);
       currentAudio = new Audio(url);
       currentAudio.loop = true;
-      currentAudio.volume = 0.5; // Moderate volume
+      currentAudio.volume = 0.2;
 
       currentAudio
         .play()
@@ -47,7 +47,7 @@ export default function initSounds() {
 
       activeSoundName = name;
 
-      // Update UI
+      // update UI
       const btn = document.querySelector(`[data-sound="${name}"]`);
       if (btn) btn.classList.add("active");
     }
@@ -59,11 +59,11 @@ export default function initSounds() {
     });
   });
 
-  // Volume Control
+  // volume control
   const volumeSlider = document.getElementById("volume-slider");
   if (volumeSlider) {
-    // Set initial volume visually
-    volumeSlider.value = 0.5;
+    // initial volume
+    volumeSlider.value = 0.01;
 
     volumeSlider.addEventListener("input", (e) => {
       const vol = parseFloat(e.target.value);

@@ -7,18 +7,16 @@ export default function initWeather() {
     if (aqi !== undefined) {
       aqiEl.textContent = aqi;
 
-      // Simple color coding for AQI
+      // color for AQI
       const badge = document.getElementById("aqi-badge");
-      if (aqi <= 50)
-        badge.style.background = "rgba(46, 204, 113, 0.4)"; // Good (Green)
-      else if (aqi <= 100)
-        badge.style.background = "rgba(241, 196, 15, 0.4)"; // Moderate (Yellow)
-      else badge.style.background = "rgba(231, 76, 60, 0.4)"; // Unhealthy (Red)
+      if (aqi <= 50) badge.style.background = "rgba(46, 204, 113, 0.4)";
+      else if (aqi <= 100) badge.style.background = "rgba(241, 196, 15, 0.4)";
+      else badge.style.background = "rgba(231, 76, 60, 0.4)";
     }
   }
 
   function fetchData(lat, lon) {
-    // Weather
+    // weather
     const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`;
     // AQI
     const aqiUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&current=us_aqi`;
@@ -39,7 +37,7 @@ export default function initWeather() {
       });
   }
 
-  // Get User Location
+  // get user location
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {

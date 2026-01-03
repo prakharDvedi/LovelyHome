@@ -20,12 +20,9 @@ export default function initTodo() {
       const span = document.createElement("span");
       span.textContent = todo.text;
 
-      // Delete button (appears on hover effectively via layout, or just always visible for simplicity)
-      // For this design, we'll keep it clean: Text content primarily.
-
       li.appendChild(span);
 
-      // Click to toggle
+      // click to toggle
       li.addEventListener("click", () => {
         todo.completed = !todo.completed;
         save();
