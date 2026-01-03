@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Lovely Home",
+  "version": "1.0",
+  "description": "A beautiful, serene start to your browsing journey.",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "action": {
+    "default_title": "Lovely Home"
+  },
+  "permissions": []
+}
