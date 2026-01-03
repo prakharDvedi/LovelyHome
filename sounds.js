@@ -4,10 +4,9 @@ export default function initSounds() {
   let activeSoundName = null;
 
   const SOUNDS = {
-    rain: "https://raw.githubusercontent.com/bradtraversy/ambient-sound-mixer/main/sounds/rain.mp3",
-    forest:
-      "https://raw.githubusercontent.com/bradtraversy/ambient-sound-mixer/main/sounds/forest.mp3",
-    cafe: "https://raw.githubusercontent.com/bradtraversy/ambient-sound-mixer/main/sounds/coffee-shop.mp3",
+    rain: "sounds/rain.mp3",
+    forest: "sounds/water.mp3", // User provided water.mp3
+    cafe: "sounds/coffee.mp3", // User provided coffee.mp3
   };
 
   function stopSound() {
@@ -33,10 +32,18 @@ export default function initSounds() {
     // Play new
     const url = SOUNDS[name];
     if (url) {
+      console.log(`Loading sound: ${name} from ${url}`);
       currentAudio = new Audio(url);
       currentAudio.loop = true;
       currentAudio.volume = 0.5; // Moderate volume
-      currentAudio.play();
+
+      currentAudio
+        .play()
+        .then(() => console.log("Playback started successfully"))
+        .catch((error) => {
+          console.error("Playback failed:", error);
+          alert("Error playing sound. Check console for details.");
+        });
 
       activeSoundName = name;
 
