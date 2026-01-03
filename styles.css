@@ -294,6 +294,30 @@ body {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+#volume-slider {
+  width: 100%;
+  margin-top: 5px;
+  height: 4px;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  outline: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+#volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
 /* Themes */
 /* Default (Calm) is handled by body background in :root/body, 
 but we can define explicit classes to override */

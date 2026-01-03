@@ -58,4 +58,18 @@ export default function initSounds() {
       playSound(btn.dataset.sound);
     });
   });
+
+  // Volume Control
+  const volumeSlider = document.getElementById("volume-slider");
+  if (volumeSlider) {
+    // Set initial volume visually
+    volumeSlider.value = 0.5;
+
+    volumeSlider.addEventListener("input", (e) => {
+      const vol = parseFloat(e.target.value);
+      if (currentAudio) {
+        currentAudio.volume = vol;
+      }
+    });
+  }
 }

@@ -7,7 +7,13 @@
     "newtab": "newtab.html"
   },
   "action": {
-    "default_title": "Lovely Home"
+    "default_title": "Lovely Home",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   },
   "permissions": []
 }
