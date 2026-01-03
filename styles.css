@@ -232,3 +232,91 @@ body {
   text-align: right;
   font-style: normal;
 }
+
+/* Control Dock */
+.controls-dock {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.dock-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 120px;
+}
+
+.dock-card h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.control-btn.active {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Themes */
+/* Default (Calm) is handled by body background in :root/body, 
+but we can define explicit classes to override */
+
+.bg-calm {
+  background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.bg-energy {
+  background: linear-gradient(45deg, #ff9966, #ff5e62, #9933cc);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.bg-forest {
+  background: linear-gradient(45deg, #134e5e, #71b280, #2d5a27);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.bg-minimal {
+  background: #111;
+  animation: none;
+}
