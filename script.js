@@ -1,4 +1,6 @@
 import quote from "./quote.js";
+import initTodo from "./todo.js";
+import initWeather from "./weather.js";
 
 function updateTime() {
   const now = new Date();
@@ -27,6 +29,8 @@ function updateTime() {
 // Initial call
 updateTime();
 quote();
+initTodo();
+initWeather();
 
 // Update every second
 setInterval(updateTime, 1000);
